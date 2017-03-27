@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BankingApplicationProgram
 {
-    public partial class Form1 : Form
+    public partial class PostLoginScreen : Form
     {
-        public Form1()
+        public PostLoginScreen()
         {
             InitializeComponent();
+        }
+
+        private void PostLoginScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
