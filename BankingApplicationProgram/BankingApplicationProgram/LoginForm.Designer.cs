@@ -36,6 +36,7 @@
             this.rb_Existing = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.testListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lbl_Username
@@ -129,12 +130,21 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Banking Application Login";
             // 
+            // testListBox
+            // 
+            this.testListBox.FormattingEnabled = true;
+            this.testListBox.Location = new System.Drawing.Point(32, 105);
+            this.testListBox.Name = "testListBox";
+            this.testListBox.Size = new System.Drawing.Size(232, 303);
+            this.testListBox.TabIndex = 8;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.testListBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rb_Existing);
@@ -162,6 +172,7 @@
         private System.Windows.Forms.RadioButton rb_Existing;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox testListBox;
     }
 }
 
