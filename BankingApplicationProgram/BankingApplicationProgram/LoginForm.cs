@@ -46,17 +46,12 @@ namespace BankingApplicationProgram
             {
                 DataTable loginTable = new DataTable();
                 adapter.Fill(loginTable);
-
-                testListBox.DisplayMember = "username";
-                testListBox.ValueMember = "LoginID";
-                testListBox.DataSource = loginTable;
-
             }
-            
-            //PostLoginScreen frm = new PostLoginScreen();
-            //this.Hide();
-            //frm.ShowDialog();
-            //this.Close();
+
+            PostLoginScreen frm = new PostLoginScreen();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }
