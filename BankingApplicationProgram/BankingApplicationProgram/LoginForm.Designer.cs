@@ -34,7 +34,7 @@
             this.tb_Password = new System.Windows.Forms.TextBox();
             this.rb_CreateUsrAccount = new System.Windows.Forms.RadioButton();
             this.rb_Existing = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Submit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -104,19 +104,19 @@
             this.rb_Existing.Text = "Existing User";
             this.rb_Existing.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_Submit
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(205)))), ((int)(((byte)(25)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(443, 354);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btn_Submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(205)))), ((int)(((byte)(25)))));
+            this.btn_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Submit.Font = new System.Drawing.Font("Verdana", 12F);
+            this.btn_Submit.ForeColor = System.Drawing.Color.Black;
+            this.btn_Submit.Location = new System.Drawing.Point(443, 354);
+            this.btn_Submit.Name = "btn_Submit";
+            this.btn_Submit.Size = new System.Drawing.Size(100, 30);
+            this.btn_Submit.TabIndex = 6;
+            this.btn_Submit.Text = "Submit";
+            this.btn_Submit.UseVisualStyleBackColor = false;
+            this.btn_Submit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label1
             // 
@@ -136,7 +136,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Submit);
             this.Controls.Add(this.rb_Existing);
             this.Controls.Add(this.rb_CreateUsrAccount);
             this.Controls.Add(this.tb_Password);
@@ -160,7 +160,7 @@
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.RadioButton rb_CreateUsrAccount;
         private System.Windows.Forms.RadioButton rb_Existing;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.Label label1;
     }
 }

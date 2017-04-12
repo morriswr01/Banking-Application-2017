@@ -21,5 +21,42 @@ namespace BankingApplicationProgram
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ViewExistingOptions frm = new ViewExistingOptions();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void tb_welcomeBanner_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoginForm frm = new LoginForm();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoginForm frm = new LoginForm();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddExistingAccount frm = new AddExistingAccount();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }

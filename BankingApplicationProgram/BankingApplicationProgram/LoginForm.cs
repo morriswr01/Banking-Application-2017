@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace BankingApplicationProgram
 {
@@ -39,19 +40,47 @@ namespace BankingApplicationProgram
             this.Close();
         }
 
+        private bool ValidationExistingUser(string username, string password) {
+            var allowedItems = new Regex("^[a-zA-Z0-9]+$");
+            string[] inputsToValidate = new string[2] { username, password };
+            for (int i = 0; i < 2; i++)
+            {
+                if (inputsToValidate[i].Length > 15 || !(allowedItems.IsMatch(inputsToValidate[i])))
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM tbl_Login", connection))
+            var result = ValidationExistingUser(tb_Username.Text, tb_Password.Text);
+            if (!result)
             {
-                DataTable loginTable = new DataTable();
-                adapter.Fill(loginTable);
+                MessageBox.Show("Inputs must not contain spaces symbols or be blank and must not be longer than 15 characters, Please try again.");
             }
-
-            PostLoginScreen frm = new PostLoginScreen();
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            else
+            {
+                using (connection = new SqlConnection(connectionString))
+                using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM tbl_Login WHERE username = '" + tb_Username.Text + "' AND password = '" + tb_Password.Text + "'", connection))
+                {
+                    DataTable loginTable = new DataTable();
+                    adapter.Fill(loginTable);
+                    if (loginTable.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Login Incorrect, Please try again.");
+                    }
+                    else if (loginTable.Rows.Count >= 1)
+                    {
+                        PostLoginScreen frm = new PostLoginScreen();
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
         }
     }
 }

@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountViewingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountViewingScreen.Designer.cs">
+      <DependentUpon>AccountViewingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddExistingAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddExistingAccount.Designer.cs">
+      <DependentUpon>AddExistingAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,6 +98,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewExistingOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewExistingOptions.Designer.cs">
+      <DependentUpon>ViewExistingOptions.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountViewingScreen.resx">
+      <DependentUpon>AccountViewingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddExistingAccount.resx">
+      <DependentUpon>AddExistingAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginFormCreateNewUser.resx">
       <DependentUpon>LoginFormCreateNewUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +128,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewExistingOptions.resx">
+      <DependentUpon>ViewExistingOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DBDataSet.xsc">
       <DependentUpon>DBDataSet.xsd</DependentUpon>
     </None>
@@ -127,15 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Submit = new System.Windows.Forms.Button();
             this.rb_Existing = new System.Windows.Forms.RadioButton();
             this.rb_CreateUsrAccount = new System.Windows.Forms.RadioButton();
             this.tb_Password = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tb_Dob = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tb_EmailAddress = new System.Windows.Forms.TextBox();
+            this.tb_HomeAddress = new System.Windows.Forms.TextBox();
             this.drpbx_Gender = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -60,19 +60,19 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Banking Application Login";
             // 
-            // button1
+            // btn_Submit
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(205)))), ((int)(((byte)(25)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(428, 451);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btn_Submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(205)))), ((int)(((byte)(25)))));
+            this.btn_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Submit.Font = new System.Drawing.Font("Verdana", 12F);
+            this.btn_Submit.ForeColor = System.Drawing.Color.Black;
+            this.btn_Submit.Location = new System.Drawing.Point(428, 451);
+            this.btn_Submit.Name = "btn_Submit";
+            this.btn_Submit.Size = new System.Drawing.Size(100, 30);
+            this.btn_Submit.TabIndex = 14;
+            this.btn_Submit.Text = "Submit";
+            this.btn_Submit.UseVisualStyleBackColor = false;
+            this.btn_Submit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // rb_Existing
             // 
@@ -226,17 +226,17 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(313, 342);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 23);
+            this.label7.Size = new System.Drawing.Size(148, 23);
             this.label7.TabIndex = 28;
-            this.label7.Text = "Email Address";
+            this.label7.Text = "Home Address";
             // 
-            // tb_EmailAddress
+            // tb_HomeAddress
             // 
-            this.tb_EmailAddress.Font = new System.Drawing.Font("Verdana", 14F);
-            this.tb_EmailAddress.Location = new System.Drawing.Point(526, 339);
-            this.tb_EmailAddress.Name = "tb_EmailAddress";
-            this.tb_EmailAddress.Size = new System.Drawing.Size(100, 30);
-            this.tb_EmailAddress.TabIndex = 27;
+            this.tb_HomeAddress.Font = new System.Drawing.Font("Verdana", 14F);
+            this.tb_HomeAddress.Location = new System.Drawing.Point(526, 339);
+            this.tb_HomeAddress.Name = "tb_HomeAddress";
+            this.tb_HomeAddress.Size = new System.Drawing.Size(100, 30);
+            this.tb_HomeAddress.TabIndex = 27;
             // 
             // drpbx_Gender
             // 
@@ -259,7 +259,7 @@
             this.ClientSize = new System.Drawing.Size(984, 566);
             this.Controls.Add(this.drpbx_Gender);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.tb_EmailAddress);
+            this.Controls.Add(this.tb_HomeAddress);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tb_Dob);
             this.Controls.Add(this.label5);
@@ -271,7 +271,7 @@
             this.Controls.Add(this.lbl_Username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Submit);
             this.Controls.Add(this.rb_Existing);
             this.Controls.Add(this.rb_CreateUsrAccount);
             this.Controls.Add(this.tb_Password);
@@ -286,7 +286,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.RadioButton rb_Existing;
         private System.Windows.Forms.RadioButton rb_CreateUsrAccount;
         private System.Windows.Forms.TextBox tb_Password;
@@ -302,7 +302,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_Dob;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tb_EmailAddress;
+        private System.Windows.Forms.TextBox tb_HomeAddress;
         private System.Windows.Forms.ComboBox drpbx_Gender;
     }
 }
