@@ -16,5 +16,11 @@ namespace BankingApplicationProgram
         {
             InitializeComponent();
         }
+
+        private void AccountView_Load(object sender, EventArgs e)
+        {
+            label1.Text = GlobalVariablesClass.accountNumber;
+
+        }
     }
 }

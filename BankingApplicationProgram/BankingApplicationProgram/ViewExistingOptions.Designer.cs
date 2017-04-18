@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.YourAccounts = new System.Windows.Forms.ListBox();
+            this.lb_YourAccounts = new System.Windows.Forms.ListBox();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,13 +46,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "View Your Accounts";
             // 
-            // YourAccounts
+            // lb_YourAccounts
             // 
-            this.YourAccounts.FormattingEnabled = true;
-            this.YourAccounts.Location = new System.Drawing.Point(391, 79);
-            this.YourAccounts.Name = "YourAccounts";
-            this.YourAccounts.Size = new System.Drawing.Size(191, 238);
-            this.YourAccounts.TabIndex = 1;
+            this.lb_YourAccounts.FormattingEnabled = true;
+            this.lb_YourAccounts.Location = new System.Drawing.Point(391, 79);
+            this.lb_YourAccounts.Name = "lb_YourAccounts";
+            this.lb_YourAccounts.Size = new System.Drawing.Size(191, 238);
+            this.lb_YourAccounts.TabIndex = 1;
             // 
             // btn_Submit
             // 
@@ -66,6 +66,7 @@
             this.btn_Submit.TabIndex = 7;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = false;
+            this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
             // button1
             // 
@@ -104,10 +105,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Submit);
-            this.Controls.Add(this.YourAccounts);
+            this.Controls.Add(this.lb_YourAccounts);
             this.Controls.Add(this.label1);
             this.Name = "ViewExistingOptions";
             this.Text = "ViewExistingOptions";
+            this.Load += new System.EventHandler(this.ViewYourAccounts_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,7 +118,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox YourAccounts;
+        private System.Windows.Forms.ListBox lb_YourAccounts;
         private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

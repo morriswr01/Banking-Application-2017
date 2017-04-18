@@ -17,17 +17,9 @@ namespace BankingApplicationProgram
             InitializeComponent();
         }
 
-        private void PostLoginScreen_Load(object sender, EventArgs e)
+        public void PostLoginScreen_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ViewExistingOptions frm = new ViewExistingOptions();
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
         }
 
         private void tb_welcomeBanner_Click(object sender, EventArgs e)
@@ -51,9 +43,25 @@ namespace BankingApplicationProgram
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ViewExistingAccountBtn_Click(object sender, EventArgs e)
+        {
+            ViewExistingOptions frm = new ViewExistingOptions();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_AddExistingAccount_Click(object sender, EventArgs e)
         {
             AddExistingAccount frm = new AddExistingAccount();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_CreateNewAccount_Click(object sender, EventArgs e)
+        {
+            CreateNewAccount frm = new CreateNewAccount();
             this.Hide();
             frm.ShowDialog();
             this.Close();

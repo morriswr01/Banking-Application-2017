@@ -73,11 +73,18 @@
     <Compile Include="AddExistingAccount.Designer.cs">
       <DependentUpon>AddExistingAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewAccount.Designer.cs">
+      <DependentUpon>CreateNewAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GlobalVariablesClass.cs" />
     <Compile Include="LoginFormCreateNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddExistingAccount.resx">
       <DependentUpon>AddExistingAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewAccount.resx">
+      <DependentUpon>CreateNewAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginFormCreateNewUser.resx">
       <DependentUpon>LoginFormCreateNewUser.cs</DependentUpon>
