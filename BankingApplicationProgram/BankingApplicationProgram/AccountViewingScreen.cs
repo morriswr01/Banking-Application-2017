@@ -15,11 +15,13 @@ namespace BankingApplicationProgram
         public AccountViewingScreen()
         {
             InitializeComponent();
+            var accountNumber = GlobalVariablesClass.accountNumber;
         }
 
-        private void AccountView_Load(object sender, EventArgs e)
+        private void AccountViewingScreen_Load(object sender, EventArgs e)
         {
-            label1.Text = GlobalVariablesClass.accountNumber;
+            // TODO: This line of code loads data into the 'dBDataSet.tbl_Transaction' table. You can move, or remove it, as needed.
+            this.tbl_TransactionTableAdapter.Fill(this.dBDataSet.tbl_Transaction);
 
         }
     }
