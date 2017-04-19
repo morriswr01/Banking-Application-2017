@@ -17,18 +17,16 @@ namespace BankingApplicationProgram
     {
         //Initialised the connction and connectionstring objects/variables used throughout the code
         SqlConnection connection;
-        string connectionString;
         public CreateNewAccount()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["BankingApplicationProgram.Properties.Settings.DBConnectionString1"].ConnectionString;
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             if (tb_SecurityQAnswer.Text != "" && cb_AccountType.Text != "" && cb_SecurityQuestion.Text != "")
             {
-                using (connection = new SqlConnection(connectionString))
+                using (connection = new SqlConnection(GlobalVariablesClass.connectionString))
                 using (SqlDataAdapter adapter = new SqlDataAdapter("INSERT INTO tbl_Account([Account Type],[Account Balance],[Security Question],[Security Question Answer],[customerID]) VALUES (@accountType,'0',@SecQues,@SecQuesAns,@customerID); SELECT SCOPE_IDENTITY()", connection))
                 {
                     adapter.SelectCommand.Parameters.AddWithValue("@accountType", cb_AccountType.SelectedItem);

@@ -18,13 +18,11 @@ namespace BankingApplicationProgram
     {
         //Initialised the connction and connectionstring objects/variables used throughout the code
         SqlConnection connection;
-        string connectionString;
         string masterMessage = "";
         public LoginForm()
         {
             InitializeComponent();
             //Gets the connection string from app.config by the name given
-            connectionString = ConfigurationManager.ConnectionStrings["BankingApplicationProgram.Properties.Settings.DBConnectionString1"].ConnectionString;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -67,7 +65,7 @@ namespace BankingApplicationProgram
             if (result)
             {
                 //Checks if there is a matching username and password in tbl_Login
-                using (connection = new SqlConnection(connectionString))
+                using (connection = new SqlConnection(GlobalVariablesClass.connectionString))
                 using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM tbl_Login WHERE username = '" + tb_Username.Text.ToLower() + "' AND password = '" + tb_Password.Text.ToLower() + "'", connection))
                 {
                     DataTable loginTable = new DataTable();

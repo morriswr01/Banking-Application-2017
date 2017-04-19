@@ -16,17 +16,15 @@ namespace BankingApplicationProgram
     {
         //Initialised the connction and connectionstring objects/variables used throughout the code
         SqlConnection connection;
-        string connectionString;
 
         public ViewExistingOptions()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["BankingApplicationProgram.Properties.Settings.DBConnectionString1"].ConnectionString;
         }
 
         private void ViewYourAccounts_Load(object sender, EventArgs e)
         {
-            using (connection = new SqlConnection(connectionString))
+            using (connection = new SqlConnection(GlobalVariablesClass.connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM tbl_Account WHERE customerID = '" + Convert.ToInt16(GlobalVariablesClass.customerID) + "'", connection))
             {
                 DataTable AccountsTable = new DataTable();

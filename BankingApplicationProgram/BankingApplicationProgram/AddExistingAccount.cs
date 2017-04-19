@@ -16,13 +16,11 @@ namespace BankingApplicationProgram
     public partial class AddExistingAccount : Form
     {
         SqlConnection connection;
-        string connectionString;
         string answer;
 
         public AddExistingAccount()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["BankingApplicationProgram.Properties.Settings.DBConnectionString1"].ConnectionString;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,7 +49,7 @@ namespace BankingApplicationProgram
             }
             else
             {
-                using (connection = new SqlConnection(connectionString))
+                using (connection = new SqlConnection(GlobalVariablesClass.connectionString))
                 using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM tbl_Account WHERE [Account Number] = '"+tb_AccountNumber.Text+"'", connection))
                 {
                     DataTable AccountTable = new DataTable();
@@ -75,7 +73,7 @@ namespace BankingApplicationProgram
         {
             if (tb_AnswerBox.Text.ToLower() == answer.ToLower())
             {
-                using (connection = new SqlConnection(connectionString))
+                using (connection = new SqlConnection(GlobalVariablesClass.connectionString))
                 using (SqlCommand cmd = new SqlCommand("UPDATE tbl_Account SET customerID = '"+Convert.ToInt16(GlobalVariablesClass.customerID)+ "' WHERE [Account Number] = '"+Convert.ToInt16(GlobalVariablesClass.accountNumber)+"' ", connection))
                 {
                     connection.Open();

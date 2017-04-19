@@ -17,13 +17,11 @@ namespace BankingApplicationProgram
     {
         //Initialised the connction and connectionstring objects/variables used throughout the code
         SqlConnection connection;
-        string connectionString;
         string masterMessage = "";
         public LoginForm_CreateNewUser_()
         {
             InitializeComponent();
             //Gets the connection string from app.config by the name given
-            connectionString = ConfigurationManager.ConnectionStrings["BankingApplicationProgram.Properties.Settings.DBConnectionString1"].ConnectionString;
         }
 
         private void LoginForm_CreateNewUser__Load(object sender, EventArgs e)
@@ -100,7 +98,7 @@ namespace BankingApplicationProgram
             var result2 = ValidationCustomerDetails(tb_FName.Text,tb_LName.Text,tb_Dob.Text,tb_HomeAddress.Text);
             if (result1 && result2)
             {
-                using (connection = new SqlConnection(connectionString))
+                using (connection = new SqlConnection(GlobalVariablesClass.connectionString))
                 {
                     //Inserts the customer details into tbl_Customer and returns the customerID for use in forming the tbl_Login part of the record
                     using (SqlDataAdapter adapter = new SqlDataAdapter("INSERT INTO tbl_Customer ([First Name],[Last Name],[Gender],[Date Of Birth],[House Address]) VALUES (@FName,@LName,@Gender,@Dob,@HAddress); SELECT SCOPE_IDENTITY()", connection))

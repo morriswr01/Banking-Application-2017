@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,14 @@ namespace BankingApplicationProgram
         {
             get { return accountNum; }
             set { accountNum = value; }
+        }
+
+        private static string connStringNme = ConfigurationManager.ConnectionStrings["BankingApplicationProgram.Properties.Settings.DBConnectionString1"].ConnectionString;
+
+        public static string connectionString
+        {
+            get { return connStringNme; }
+            set { connStringNme = value; }
         }
     }
 }
